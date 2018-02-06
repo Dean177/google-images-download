@@ -75,7 +75,7 @@ Starting download...
             try:
                 req = urllib.request.Request(image_url, headers={"User-Agent": user_agent})
                 response = urllib.request.urlopen(req, None, 5)
-                output_file = open(f'{search_keyword}-{str(k)}.jpg', 'wb')
+                output_file = open(f'{search_keyword}/{search_keyword}-{str(k)}.jpg', 'wb')
 
                 data = response.read()
                 output_file.write(data)
@@ -100,7 +100,7 @@ parser.add_argument(
     help="""
         This list is used to search keywords. You can edit this list to search for google images of your choice. You can
         simply add and remove elements of the list.
-        Usage: 
+        Usage:
         google-images-download cat dog
     """
 )
